@@ -139,7 +139,6 @@ img {
     gap: 1em;
     flex-direction: row;
     justify-content: center;
-
 }
 
 .height-limit-100 {
@@ -149,6 +148,10 @@ img {
 .height-limit-200 {
     display: flex;
     height: 200px;
+}
+.height-limit-250 {
+    display: flex;
+    height: 250px;
 }
 .height-limit-300 {
     display: flex;
@@ -214,6 +217,9 @@ pre > code {
 
 .dense code {
     padding: 0.5em !important;
+}
+.dense-wide code {
+    padding: 0.5em 2em !important;
 }
 
 .sparse code {

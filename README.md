@@ -7,12 +7,12 @@
 - [ ] What React is and isn't
     - [x] Most of the problems you'll face are just JS
     - [x] React is the view part of you application. ONLY.
-    - [ ] Declarative vs Imperative paradigms
-    - [ ] React is just a library, there is no React website, there are websites that use React
+    - [x] Declarative vs Imperative paradigms
+    - [x] React is just a library, there is no React website, there are websites that use React
   
 - [ ] React Theory
-    - [ ] JSX
-    - [ ] Components
+    - [x] JSX
+    - [x] Components
     - [ ] VDOM and DOM
     - [ ] Reconciliation
         - [ ] Keys
