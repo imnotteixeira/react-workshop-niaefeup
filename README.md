@@ -10,21 +10,18 @@
     - [x] Declarative vs Imperative paradigms
     - [x] React is just a library, there is no React website, there are websites that use React
   
-- [ ] React Theory
+- [x] React Theory
     - [x] JSX
     - [x] Components
-    - [ ] VDOM and DOM
-    - [ ] Reconciliation
-        - [ ] Keys
-        - [ ] Why keys = index might be a bad idea (antipattern)
-    - [ ] Component lifecycle
-        - [ ] Hooks & Hooks rules
-    - [ ] Common Patterns
+    - [x] VDOM and DOM
+    - [x] Reconciliation
+        - [x] Keys
+        - [x] Why keys = index might be a bad idea (antipattern)
+    - [x] Component lifecycle
+        - [x] Hooks & Hooks rules
+    - [x] Common Patterns
         - Controller Component (Stateful vs Steteless components)
         - HoC
-    - [ ] Simple Timer example (updates/refs problems)
-    - [ ] React context
-
   
 ### Part 2
 
