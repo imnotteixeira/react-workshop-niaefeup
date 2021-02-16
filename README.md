@@ -5,19 +5,20 @@
 ### Part 1
 
 - [ ] What React is and isn't
-    - [ ] Most of the problems you'll face are just JS
-    - [ ] React is the view part of you application. ONLY.
+    - [x] Most of the problems you'll face are just JS
+    - [x] React is the view part of you application. ONLY.
     - [ ] Declarative vs Imperative paradigms
     - [ ] React is just a library, there is no React website, there are websites that use React
   
 - [ ] React Theory
+    - [ ] JSX
     - [ ] Components
     - [ ] VDOM and DOM
     - [ ] Reconciliation
         - [ ] Keys
         - [ ] Why keys = index might be a bad idea (antipattern)
     - [ ] Component lifecycle
-        - [ ] Hooks
+        - [ ] Hooks & Hooks rules
     - [ ] Common Patterns
         - Controller Component (Stateful vs Steteless components)
         - HoC
@@ -27,6 +28,7 @@
   
 ### Part 2
 
+- [ ] PropTypes
 - [ ] Calling APIs
 - [ ] React Router
 - [ ] Redux
@@ -37,3 +39,4 @@
 ### Part 3
 - Create a github issues page for any repo
     - https://api.github.com/repos/{user}/{repo}/issues
+    - https://docs.github.com/en/rest/reference/issues#list-repository-issues

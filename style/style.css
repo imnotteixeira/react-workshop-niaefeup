@@ -124,6 +124,10 @@ img {
     color: var(--color-main);
 }
 
+.inverse .highlight {
+    color: var(--color-main-inverse);
+}
+
 .flex-columns {
     display: flex;
     gap: 1em;
@@ -183,7 +187,7 @@ img {
 
 .inverse h1 {
     background-color: transparent;
-    color: var(--color-main);
+    color: var(--color-main-inverse);
     line-height: 0.8em;
 }
 
