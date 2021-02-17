@@ -31,7 +31,7 @@ class: inverse
 <div>
     <p class="highlight">Angelo Teixeira</p>
     <p>MIEIC Finalist</p>
-    <p>2+ Years experience with React - Including internships and NIJobs</p>
+    <p>2+ Years experience with React - Including internships and NIJobs development</p>
 </div>
 </div>
 
@@ -44,7 +44,9 @@ class: inverse
 
 </div>
 
+Follow along if you want to check the slides: 
 
+https://ws-react-niaefeup.netlify.app/
 
 ---
 class: center, middle, inverse
