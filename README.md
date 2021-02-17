@@ -25,10 +25,10 @@
   
 ### Part 2
 
-- [ ] PropTypes
-- [ ] Calling APIs
-- [ ] React Router
-- [ ] Redux
+- [x] PropTypes
+- [x] Calling APIs
+- [x] React Router
+- [x] Redux
     - How it leverages the HoC pattern to provide global state
     - there are also hooks now
 - [ ] MaterialUI

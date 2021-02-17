@@ -634,14 +634,244 @@ const MyCalculator = ({sum, a, b}) => (
     <div>
         <input value={a}/>
         <input value={b}/>
-        <button onClick={sum(a,b)}>Sum</button>
+        <button onClick={() => { console.log(sum(a,b)) }>Sum</button>
     </div>
 )
 
 export default withMath(MyCalculator);
-// No need to specify the sum `prop` when using this component. It will already be populated by the `withMath()`.
+// No need to specify the sum `prop` when using this component.
+// It will already be populated by the `withMath()`.
 
 ```
 
 ]
+
+---
+class: center, middle, inverse
+
+# Common libraries/API that you must know
+
+---
+
+# PropTypes
+
+Since React is programmed in JavaScript, props don't have types by default. This can lead to some errors if you're not careful.
+
+.highlight[PropTypes] lets you define the types for you component props, and even if they are required or not.
+
+.center[
+```javascript
+const SomeComponent = ({prop1, prop2, prop3}) => ()
+
+SomeComponent.propTypes = {
+    prop1: PropTypes.string.isRequired,
+    prop2: PropTypes.func,
+    prop3: PropTypes.oneOf(["first", "second", "third"]).isRequired,
+}
+```
+]
+
+---
+
+# Calling APIs - Fetch
+
+In order to make requests to an HTTP API, you can use the built-in JS library `fetch`, or some external package such as `axios`
+
+.center[
+```javascript
+try {
+        const response = await fetch(`${API_HOSTNAME}/offers`, {
+            method: "GET",
+        });
+        
+        if (!response.ok) {
+            // Any HTTP status non 2xx will make ok = false
+        }
+        
+        // If the response is JSON, call .json() which returns a Promise
+        const json = await res.json();
+
+    } catch (error) {
+        // Handle Network Error
+}
+```
+]
+
+---
+
+# React Router
+
+React Router allows you to **simulate** different pages in your application.
+
+.center[
+```html
+<BrowserRouter>
+    <Switch>
+        <Route
+            exact
+            path="/"
+        >
+            <HomePage/>
+        </Route>
+        <Route
+            path="/apply/company"
+        >
+            <CompanyApplicationPage/>
+        </Route>
+    </Switch>
+</BrowserRouter>
+```
+]
+
+---
+
+# React Router
+
+When you define different Routes, technically it will not create different pages. The user will still access "/", which will then load the application code and then the rest of the path will be parsed and a different component will be rendered, depending on the route.
+
+This is why when you have an "only React with React Router" web application, you need to re-route all pages to "/", so that they are resolved by React, instead of the web server itself.
+
+---
+
+# Redux
+
+.highlight[Redux] allows you to centralize your application's state and logic enables powerful capabilities like undo/redo and state persistence.
+
+Redux is made for JavaScript in general, but it has specific bindings for React, which are really useful.
+
+---
+
+# Redux --- The Problem
+
+Imagine you want to store cart information (for example in an e-commerce app). However, you want it in the navbar, and you need to edit it in some other places of the page.
+
+.height-limit-250[![Prop Drilling](./img/cart-prop-drilling.png)]
+
+
+You would need to store it in a common ancestor for all, and pass it down via props (called prop-drilling)
+
+---
+
+# Redux --- (One of) The solution(s)
+
+Redux lets you create a `store` which will hold common state. Then, you make components subscribe to it (via HoC pattern or Hooks), which will then react to changes in the store and have access to ways of changing it.
+
+.center[
+```javascript
+import { combineReducers } from "redux";
+import notificationReducer from "./notificationReducer";
+import searchOffersReducer from "./searchOffersReducer";
+import companyApplicationReducer from "./companyApplicationReducer";
+import navbarActionsReducer from "./navbarActionsReducer";
+
+// Multiple reducers can exist for different parts of the app
+export default combineReducers({
+    messages: notificationReducer,
+    offerSearch: searchOffersReducer,
+    companyApplication: companyApplicationReducer,
+    navbar: navbarActionsReducer,
+});
+```
+]
+
+---
+
+# Redux --- (One of) The solution(s)
+
+.center[
+```javascript
+const mapStateToProps = ({ offerSearch }) => ({
+    searchValue: offerSearch.searchValue,
+    jobType: offerSearch.jobType,
+    minJobDuration: offerSearch.jobDuration[0],
+    maxJobDuration: offerSearch.jobDuration[1],
+    fields: offerSearch.fields,
+    techs: offerSearch.techs,
+    showJobDurationSlider: offerSearch.filterJobDuration,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    // This will come in later :P
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchArea);
+```
+]
+
+This will make sure that `SearchArea` receives those props from the Redux Store automatically, and re-renders if they change!
+
+---
+
+# Redux --- How does state change
+
+#### Actions
+
+State is read-only, it should only change by emitting an action. Actions are the representation of what will change in the store.
+
+#### Reducers
+
+Reducers will receive actions and generate the change in the state.
+
+Reducers must be .highlight[pure]. This means they just receive the current state, and return a new version. They DO NOT change the state directly.
+
+---
+
+# Reducers --- Example
+
+.center[
+```javascript
+const initialState = {
+    offers: [],
+    loading: false,
+    error: null,
+    // ......
+};
+
+export default (state = initialState, action) => {
+
+    switch (action.type) {
+        case OfferSearchTypes.SET_OFFERS_SEARCH_RESULT:
+            return {
+                ...state,
+                offers: action.offers,
+            };
+        // ........
+    }
+};
+```
+]
+
+---
+
+# Actions --- Example
+
+.center[
+```javascript
+export const setSearchOffers = (offers) => ({
+    type: OfferSearchTypes.SET_OFFERS_SEARCH_RESULT,
+    offers,
+});
+```
+]
+
+---
+
+# Redux --- Back to the example
+
+```javascript
+export default connect(mapStateToProps, mapDispatchToProps)(SearchArea);
+```
+
+```javascript
+const mapDispatchToProps = (dispatch) => ({
+    setSearchOffers: (value) => dispatch(setSearchOffers(value)),
+    // ....
+});
+```
+
+This makes the function available to the component, which can call an API, and when it returns, call the `setSearchOffers` with the offers value.
+
+---
+
+
 
