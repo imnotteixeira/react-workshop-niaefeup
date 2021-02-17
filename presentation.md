@@ -414,7 +414,7 @@ Now React knows that the element with key '2014' is the new one, and the element
 
 # Keys
 
-Usually, react will let you know when you have some list of mutating children and you should be using keys. 
+Usually, React will let you know when you have some list of mutating children and you should be using keys. 
 
 But there are some things to consider before choosing your keys:
 
