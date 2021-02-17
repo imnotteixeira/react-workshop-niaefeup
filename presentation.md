@@ -897,5 +897,82 @@ This makes the function available to the component, which can call an API, and w
 
 ---
 
+class: center, middle, inverse
 
+# MaterialUI
 
+## Wrapping up in style.
+
+---
+
+# Material UI
+
+https://material-ui.com/
+
+.height-limit-400[![MVC Pattern](./img/mui-docs-demo.gif)]
+
+---
+
+# Material UI --- Theme
+
+You can specify the application theme with some UI defaults such as colors palette, the font type, spacing settings, etc...
+
+This way, every time you are creating a UI, you don't have to worry about making everything consistent.
+
+Usually, it's placed at the top of the Component Tree.
+
+---
+
+# Material UI --- Theme
+
+.center.dense[
+```javascript
+const theme = responsiveFontSizes(createMuiTheme({
+    palette: {
+        primary: {
+            main: "#DC4F47",
+        },
+        secondary: {
+            main: "#4F1315",
+        },
+    },
+    typography: {
+        fontFamily: [
+            "Poppins",
+            "Roboto",
+            "sans-serif",
+        ].join(","),
+    },
+}));
+
+<ThemeProvider theme={AppTheme}>
+    <App/>
+</ThemeProvider>
+```
+]
+
+---
+
+class: center, middle, inverse
+
+# React in Practice
+
+---
+
+# ~~Github~~ Nithub
+
+Nithub is a simple app that lets you see issues for any public Github repository.
+
+For this, it will use the Github API.
+
+* https://api.github.com/repos/{user}/{repo}/issues
+* https://docs.github.com/en/rest/reference/issues#list-repository-issues
+
+Clone the repository, install the dependencies, and let's begin!
+
+```bash
+git clone https://github.com/imnotteixeira/react-workshop-niaefeup.git
+cd react-workshop-niaefeup
+npm install
+npm start
+```

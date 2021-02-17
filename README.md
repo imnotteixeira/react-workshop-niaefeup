@@ -32,7 +32,7 @@
 - [x] Redux
     - How it leverages the HoC pattern to provide global state
     - there are also hooks now
-- [ ] MaterialUI
+- [x] MaterialUI
 
 ### Part 3
 - Create a github issues page for any repo
