@@ -120,6 +120,11 @@ img {
     max-width: 90%;
 }
 
+
+.justify {
+    text-align: justify;
+}
+
 .highlight {
     color: var(--color-main);
 }

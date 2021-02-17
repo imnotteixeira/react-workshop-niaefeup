@@ -49,6 +49,24 @@ Follow along if you want to check the slides:
 https://ws-react-niaefeup.netlify.app/
 
 ---
+class: inverse
+
+# Disclaimer
+
+### You will not learn React (or any Language / Lib / Framework, really) in a day.
+.justify[
+I purposefully left some (somewhat relevant) parts out because I'm about to give a lot of information at once, which can be counter-productive.
+
+It was only recently that I started to feel confident about my React skills (about 2 years in). 
+
+It is normal if you feel lost in the beginning. If you like this are of development, don't give up and eventually it will start to make sense. 
+]
+<br>
+<br>
+
+.right[Never stop learning.]
+
+---
 class: center, middle, inverse
 
 # React
