@@ -991,8 +991,8 @@ For this, it will use the Github API.
 Clone the repository, install the dependencies, and let's begin!
 
 ```bash
-git clone https://github.com/imnotteixeira/react-workshop-niaefeup.git
-cd react-workshop-niaefeup
+git clone https://github.com/imnotteixeira/react-workshop-exercise.git
+cd react-workshop-exercise
 npm install
 npm start
 ```
