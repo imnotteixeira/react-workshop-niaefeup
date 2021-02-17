@@ -571,6 +571,30 @@ function TextInputWithFocusButton() {
 ]
 
 ---
+
+# Custom React Hooks
+
+We can create a function that calls any React Hook and call it as if it were a React Hook, for more complex scenarios.
+
+.center[
+```javascript
+function useForm(fieldOptions) {
+    const initialState = Object.entries(fieldOptions).map(...)
+    const [fields, setFields] = useState(initialState)
+
+    const setField = (fieldName) = (val) => {
+        setFields(fields => ({
+            ...fields,
+            [fieldName]: val
+        }))
+    }
+
+    return [fields, setField];
+}
+```
+]
+
+---
 class: center, middle, inverse
 
 # Common Patterns

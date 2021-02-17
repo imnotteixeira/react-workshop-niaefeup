@@ -19,6 +19,7 @@
         - [x] Why keys = index might be a bad idea (antipattern)
     - [x] Component lifecycle
         - [x] Hooks & Hooks rules
+        - [x] Custom Hooks
     - [x] Common Patterns
         - Controller Component (Stateful vs Steteless components)
         - HoC
